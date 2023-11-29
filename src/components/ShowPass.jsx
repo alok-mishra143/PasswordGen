@@ -40,7 +40,7 @@ function ShowPass({ password, length }) {
 
       <div className="container flex justify-center items-center">
         <motion.button
-          className={`${copied ? "bg-green-700" : copyError ? "bg-red-500" : "bg-blue-500"} text-black px-4 py-2 rounded-md w-[100px] flex justify-center items-center`}
+          className={`${copied ? "bg-[#191970]" : copyError ? "bg-red-600" : "bg-blue-600"} text-white px-4 py-2 rounded-md w-[100px] flex justify-center items-center`}
           onClick={copyToClipboard}
           whileTap={{ scale: 0.95 }}
           animate={{

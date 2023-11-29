@@ -1,0 +1,20 @@
+.box {
+  box-shadow: 0 0 10px red;
+  animation: shadowAnimation 7s ease-in-out infinite;
+}
+
+@keyframes shadowAnimation {
+  0%, 100% {
+    box-shadow: 0 0 40px red;
+  }
+  
+ 20%, 80%{
+    box-shadow: 0 0 40px rgb(122, 1, 173);
+  }
+  40%, 60% {
+    box-shadow: 0 0 40px rgb(58, 0, 157);
+  }
+  50% {
+    box-shadow: 0 0 40px rgb(232, 0, 190);
+  }
+}

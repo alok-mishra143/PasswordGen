@@ -46,13 +46,13 @@ function GeneratePass({ setPassword, length, includeSymbols, includeNumbers, inc
   const buttonVariants = {
     initial: { scale: 1 },
     animate: { scale: 1.1 },
-    completed: { scale: 1, backgroundColor: '#4CAF50' },
+    completed: { scale: 1, backgroundColor: '#191970' },
   };
 
   return (
     <div>
       <motion.button
-        className="bg-blue-500 text-white px-4 py-2 rounded-md mb-4"
+        className="bg-blue-600 text-white px-4 py-2 rounded-md mb-4"
         variants={buttonVariants}
         initial="initial"
         animate={click ? 'completed' : 'animate'}
