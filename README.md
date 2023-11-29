@@ -2,6 +2,9 @@
 
 Deployment link:-https://password-gen-xi.vercel.app
 
+![image](https://github.com/alok-mishra143/PasswordGen/assets/100504874/0538ac12-8aad-4235-b596-79b7d1bc0f66)
+
+
 # Password Generator
 
 Welcome to the Password Generator project! This application is built using React.js, Framer Motion, and TypeWriter to provide a dynamic and visually appealing password generation experience.
@@ -12,12 +15,12 @@ Follow these steps to get the project up and running on your local machine:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/password-generator.git
+   [git clone https://github.com/alok-mishra143/PasswordGen.git]
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd password-generator
+   cd passwordGen
    ```
 
 3. Install dependencies:
@@ -27,7 +30,7 @@ Follow these steps to get the project up and running on your local machine:
 
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to use the Password Generator.
