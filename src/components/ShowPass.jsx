@@ -34,6 +34,7 @@ function ShowPass({ password, length, setPassword }) {
         id="passwordInput"
         type="text"
          value={password}
+         readOnly
       
      
         className={`${
