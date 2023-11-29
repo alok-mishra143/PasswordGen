@@ -54,8 +54,8 @@ Feel free to contribute to the project by opening issues or submitting pull requ
 
 ## Credits
 
-- Developed by [Your Name]
-- Icons provided by [Icon Source]
+- Developed by ALOK MISHRA
+
 
 ## License
 
