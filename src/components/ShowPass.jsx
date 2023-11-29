@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-function ShowPass({ password, length }) {
+function ShowPass({ password, length, setPassword }) {
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
 
@@ -25,20 +25,23 @@ function ShowPass({ password, length }) {
     }
   };
 
+
+
   return (
     <div>
-      <motion.input
+      <input
         placeholder={`Set the Length: ${length}`}
         id="passwordInput"
         type="text"
-        value={password}
-        readOnly
+         value={password}
+      
+     
         className={`${
           copied ? "border-green-700" : copyError ? "border-red-500" : "border-blue-500"
         } border px-2 py-4 mb-2 text-black w-full p-10`}
       />
 
-      <div className="container flex justify-center items-center">
+      <div className=" flex justify-center items-center">
         <motion.button
           className={`${copied ? "bg-[#191970]" : copyError ? "bg-red-600" : "bg-blue-600"} text-white px-4 py-2 rounded-md w-[100px] flex justify-center items-center`}
           onClick={copyToClipboard}

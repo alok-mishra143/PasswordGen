@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import "./App.css";
 
 import Typewriter from "typewriter-effect";
+import Seekbar from "./components/Seekbar";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -60,7 +61,7 @@ function App() {
         </span>
 
         <motion.div
-          className="mt-10 bg-purple-900/10 opacity-25 p-4 backdrop-blur-xl rounded-xl shadow-xl sm:w-full md:w-[400px] lg:w-[500px] xl:w-[500px] 2xl:w-[500px] box"
+          className="mt-10 bg-purple-900/10 opacity-25 p-4 backdrop-blur-xl rounded-xl shadow-xl super:w-full md:w-[400px] lg:w-[500px] xl:w-[500px] 2xl:w-[500px] box"
           initial={{ opacity: 0, x: -100 }}
           animate={{opacity:1,x:0}}
 
@@ -96,8 +97,8 @@ function App() {
             includeNumbers={Number}
             includeAlphabets={Alpha}
           />
-
           <ShowPass password={password} length={length} />
+         <Seekbar password={password}/>
         </motion.div>
       </main>
     </>

@@ -1,94 +1,43 @@
-import React, { useState } from "react";
+import React from 'react';
+import { passwordStrength } from 'check-password-strength';
 
-const calculateStrength = (length, hasAlpha, hasNumber, hasSymbol) => {
-  // Check if the password is strong (length >= 12 and contains alphabets, numbers, and symbols)
-  if (length >= 12 && hasAlpha && hasNumber && hasSymbol) {
-    return "Strong";
-  }
-  else if(length >= 6 && length<=12 && hasAlpha && hasNumber && !hasSymbol){
-    return "Moderate";
-  }
-  else if(length >= 6 && length<=12 && hasAlpha && !hasNumber && hasSymbol){
-    return "Moderate";
-  }
-  else if(length >= 6 && length<=12 && !hasAlpha && hasNumber && hasSymbol){
-    return "Moderate";
-  }
-  else if(length >= 12 && length<=20 && hasAlpha && !hasNumber && !hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && !hasAlpha && hasNumber && !hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && !hasAlpha && !hasNumber && hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && !hasAlpha && !hasNumber && !hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && hasAlpha && hasNumber && hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && hasAlpha && hasNumber && !hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && hasAlpha && !hasNumber && hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && !hasAlpha && hasNumber && hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && hasAlpha && !hasNumber && !hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && !hasAlpha && hasNumber && !hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && !hasAlpha && !hasNumber && hasSymbol){
-    return "Weak";
-  }
-  else if(length >= 12 && length<=20 && !hasAlpha && !hasNumber && !hasSymbol){
-    return "Weak";
-  }
-  else{
-    return "very weak";
-  }
+function Seekbar({ password }) {
+  const passwordStrengthData = passwordStrength(password);
+  const { id, value } = passwordStrengthData;
+  let width1 = 0; // Declare width variable outside the getColor function
 
-};
-
-const Seekbar = ({ length, Alpha, Number, Symbol }) => {
-  const [passwordStrength, setPasswordStrength] = useState("");
-
-  // Calculate the password strength whenever the length, alphabets, numbers, or symbols change
-  useState(() => {
-    setPasswordStrength(
-      calculateStrength(length, Alpha, Number, Symbol)
-    );
-  }, [length, Alpha, Number, Symbol]);
-
-  const getIndicatorColor = () => {
-    switch (passwordStrength) {
-      case "Strong":
-        return "text-green-500";
-      case "Moderate":
-        return "text-yellow-500";
-      case "Weak":
-        return "text-red-500";
+  const getColor = () => {
+    switch (id) {
+      case 0:
+        return 'red'; // Weak
+      case 1:
+        return 'orange'; // Fair
+      case 2:
+        return 'yellow'; // Good
+      case 3:
+        return 'green'; // Strong
       default:
-        return "";
+        return 'transparent';
     }
+  };
+
+  const progressBarStyle = {
+    width: `${(id+1)*25}%`,
+    backgroundColor: getColor(),
+    height: '10px',
+    borderRadius: '4px',
+    transition: 'width 0.3s',
   };
 
   return (
     <div>
-     
-      <div className={`password-strength-indicator ${getIndicatorColor()}`}>
-        Password Strength: {passwordStrength}
-
-        {console.log(passwordStrength,Alpha,Number,Symbol,length)}
+      <div className='text-white font-semibold font-serif' style={{ marginBottom: '10px' }}>
+        <strong>Password Strength: </strong>
+        <span style={{ color: getColor() }}>{value}</span>
       </div>
+      <div style={progressBarStyle}></div>
     </div>
   );
-};
+}
 
 export default Seekbar;

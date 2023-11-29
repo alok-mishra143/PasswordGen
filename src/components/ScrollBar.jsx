@@ -6,7 +6,7 @@ function ScrollBar({length , handleChange}) {
       {/* <label>Password length: {length}</label> */}
       <input
         type="range"
-        min="12"
+        min="0"
         max="40"
         value={length}
         onChange={handleChange}
