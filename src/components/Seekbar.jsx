@@ -22,18 +22,21 @@ function Seekbar({ password }) {
   };
 
   const progressBarStyle = {
-    width: `${(id+1)*25}%`,
+    width: `${(id + 1) * 25}%`,
     backgroundColor: getColor(),
-    height: '10px',
+    height: '5px',
     borderRadius: '4px',
     transition: 'width 0.3s',
+    boxShadow: `0 0 30px ${getColor()} , 0 0 5px ${getColor()}, 0 0 10px ${getColor()}`
   };
+  
 
   return (
     <div>
       <div className='text-white font-semibold font-serif' style={{ marginBottom: '10px' }}>
         <strong>Password Strength: </strong>
-        <span style={{ color: getColor() }}>{value}</span>
+        <span className='underline'
+        style={{ color: getColor() }}>{value}</span>
       </div>
       <div style={progressBarStyle}></div>
     </div>

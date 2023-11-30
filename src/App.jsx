@@ -100,6 +100,8 @@ function App() {
           <ShowPass password={password} length={length} />
          <Seekbar password={password}/>
         </motion.div>
+
+        <button>save to data base</button>
       </main>
     </>
   );
