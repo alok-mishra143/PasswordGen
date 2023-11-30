@@ -101,7 +101,7 @@ function App() {
          <Seekbar password={password}/>
         </motion.div>
 
-        <button>save to data base</button>
+        
       </main>
     </>
   );
