@@ -2,7 +2,10 @@
 
 Deployment link:-https://password-gen-xi.vercel.app
 
-![image](https://github.com/alok-mishra143/PasswordGen/assets/100504874/0538ac12-8aad-4235-b596-79b7d1bc0f66)
+![image](https://github.com/alok-mishra143/PasswordGen/assets/100504874/fcd0ed7b-5565-4222-b69d-d66940ad30fa)
+![image](https://github.com/alok-mishra143/PasswordGen/assets/100504874/565142e5-4eea-4d10-9267-2ffeebd4fd11)
+
+
 
 
 # Password Generator
